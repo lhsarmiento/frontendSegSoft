@@ -1,0 +1,182 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 50%;
+    }
+}
+.full-width {
+    width: 100%;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.container-image {
+    width: 100%;
+    position: absolute;
+}
+
+.container-image img {
+    width: 100%;
+    height: 100px;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+}
+.register {
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+}
+
+.register a {
+    color: #3f51b5;
+    font-weight: bold;
+}
+// .container-image::after {
+//   content: "";
+//   width: 100%;
+//   /* El height controla el alto del degradado */
+//   height: 150px;
+//   position: absolute;
+//   left: 0;
+//   /* Puedes cambiar la posición del degrado desde aquí */
+//   bottom: 0;
+//   /* Si cambias la posición, reemplaza también la dirección en el gradiente */
+//   background-image: linear-gradient(to bottom, #ffffff, transparent);
+
+// }
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.mobile-label {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    [mat-cell] {
+        word-break: break-all !important;
+        display: flex;
+    }
+
+    .mobile-label {
+        display: flex;
+        font-weight: bold;
+    }
+
+    .mat-header-row {
+        display: none;
+    }
+
+    .mat-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: fit-content;
+        border-bottom: 1px rgba(0, 0, 0, 0.12) solid;
+        width: 100%;
+
+        .mat-cell {
+            display: flex;
+            width: 100%;
+            border: none;
+        }
+    }
+}
+
+.demo-row-is-clicked {
+    font-weight: bold;
+}
+
+.mat-row .mat-cell {
+    cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+    background-color: rgba($color: #000000, $alpha: 0.05);
+}
+
+.fab {
+    margin-left: auto;
+    top: 35px;
+}
+
+//
+// Card
+//
+.card {
+    border: none;
+    overflow-x: hidden;
+    padding: 20px;
+    border-radius: 16px;
+
+    .card-header {
+        background-color: #fff;
+    }
+    .card-footer {
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #fff;
+    }
+}
+
+.btn_save {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    color: #32b26c;
+    width: 139px;
+    height: 42px;
+    border: 1.5px solid #32b26c;
+    border-radius: 16px;
+}
+
+.btn_cancel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    color: #e53327;
+    /* position: absolute; */
+    width: 140px;
+    height: 42px;
+    /* left: 84.5px; */
+    /* top: 186px; */
+    border: 1.5px solid #e53327;
+    border-radius: 16px;
+}
+.image-preview {
+    width: 100px; // O el tamaño que prefieras
+    height: 100px; // Asegura que la imagen no sea demasiado grande
+    object-fit: cover;
+    margin-top: 10px;
+}
+.success {
+    background-color: #32b26c;
+}
+.error {
+    background-color: #e53327;
+}

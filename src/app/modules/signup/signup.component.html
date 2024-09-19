@@ -1,0 +1,60 @@
+<form class="card mt-3" [formGroup]="form">
+    <div>
+        <div class="card-header d-flex align-items-center justify-content-between flex-wrap" style="gap: 1rem;">
+            <div class="m-1">
+                <h2 class="m-0 mr-2">
+                    {{title}}
+                </h2>
+                <p class="title-description">
+                    Digite todos los campos
+                </p>
+            </div>
+        </div>
+        <div class="card-body row justify-content-center">
+            <mat-form-field appearance="outline" class="col-12 col-md-6">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name" type="text" [maxlength]="500" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-md-6">
+                <mat-label>Nickname</mat-label>
+                <input matInput formControlName="nickname" type="text" [maxlength]="500" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="card-body row justify-content-center">
+            <mat-form-field appearance="outline" class="col-12 col-md-6">
+                <mat-label>Celular</mat-label>
+                <input matInput formControlName="cel" type="text"autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-md-6">
+                <mat-label>Correo Eectrónico</mat-label>
+                <input matInput formControlName="email" type="text" [maxlength]="500" autocomplete="off">
+                <mat-error>Este campo debe ser llenado con un email válido</mat-error>
+                <mat-hint>Ejemplo user&#64;gmail.com</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="card-body row justify-content-center">
+            <mat-form-field appearance="outline" class="col-12 col-md-6">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" [type]="hide?'text':'password'" autocomplete="off">
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+                </button>
+                <mat-hint>La contraseña debe contener al menos 8 caracteres</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12 col-md-6">
+                <mat-label>Confirmar contraseña</mat-label>
+                <input matInput formControlName="confirm_password" [type]="hideConfirm?'text':'password'" autocomplete="off">
+                <button type="button" mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide confirmpassword'" [attr.aria-pressed]="hideConfirm">
+                    <mat-icon>{{hideConfirm ? 'visibility' : 'visibility_off' }}</mat-icon>
+                </button>
+                <mat-hint>La contraseña debe contener al menos 8 caracteres</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div  class="card-footer d-flex align-items-center justify-content-end gap-2">
+        <button style="margin-top: 20px;border: 1px solid #3f51b5;" mat-flat-button  type="button" (click)="dialogClose()">Cancelar</button>
+        <button  style="margin-top: 20px;" mat-flat-button color="primary" type="button" (click)="create()">{{actions[action]}}</button>
+
+    </div>
+</form>

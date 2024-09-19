@@ -1,0 +1,12 @@
+<div class="d-flex flex-row align-items-center">
+    <span>{{auth.user?.name}}</span>
+    <!--  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"> -->
+     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="menu">
+         <mat-icon>face</mat-icon>
+         <mat-icon>keyboard_arrow_down</mat-icon>
+     </button>
+     <mat-menu #menu="matMenu">
+         <button mat-menu-item (click)="auth.logout()">Cerrar sesión</button>
+     </mat-menu>
+    </div>
+    

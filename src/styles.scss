@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.swal2-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.coky-spinner-container {
+    position: fixed;
+    z-index: 999998;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: white, $alpha: 0.3);
+
+    .background {
+        position: absolute;
+        z-index: 999999;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 250px;
+        height: 150px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        background-color: rgba($color: white, $alpha: 1);
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+
+        img {
+            border-radius: 100px;
+            // padding: -40px;
+            object-fit: cover;
+            // transform: scale(1.3);
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.star.disabled,
+.rating.disabled .star-container .star,
+.rating.disabled .rating.label-value .star-container .star,
+.rating.disabled .star-container .rating.star .star.label-value,
+.rating.disabled .star-container .rating.star .star-container .star,
+.rating.disabled .star.label-value {
+  opacity: 1 !important;
+}

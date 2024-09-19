@@ -1,0 +1,46 @@
+<div>
+    <div class="login-container">
+        <div class="login-box">
+            <!-- <div class="login-logo">
+                <img src="../../../assets/images/domi_store.png" alt="logo" />
+            </div> -->
+            <div class="login-form">
+
+
+                <form [formGroup]="loginForm">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <input matInput placeholder="Correo electrónico" formControlName="email" autocomplete="off"/>
+
+                        @if(loginForm.controls['email'].hasError('required')){
+                        <mat-error>El correo eletronico es requerido</mat-error>
+
+                        }
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <input matInput placeholder="Contraseña" [type]="hide?'text':'password'" formControlName="password" autocomplete="off"/>
+                        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                            La contraseña es requerida
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button mat-raised-button class="full-width" color="primary" type="submit" (click)="signIn()"
+                        [disabled]="loginForm.invalid">
+                        Iniciar Sesión
+                    </button>
+                    <div class="d-flex flex-column">
+                        <span class="register-business">¿No tienes cuenta? Registrate <a color="primary" style="cursor: pointer;text-decoration: underline;color: #3f51b5;;"
+                            (click)="openSignup({},'new')">aquí</a></span>
+                    </div>
+                   
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

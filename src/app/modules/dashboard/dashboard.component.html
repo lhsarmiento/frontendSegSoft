@@ -1,0 +1,42 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer mode="side" opened>
+       <!--  <div class="login-logo">
+            <img src="../../../assets/images/domi_blanco.png" alt="logo" />
+        </div> -->
+
+        <mat-list role="list" class="my-list-container">
+            <h2>Menu</h2>
+            <mat-list-item role="listitem" routerLinkActive="active" routerLink="download-file">
+                <mat-icon matListItemIcon [ngClass]="{'active-text-color': isActive('download-file')}">download</mat-icon>
+
+                <div matListItemTitle [ngClass]="{'active-text-color': isActive('download-file')}">Archivos</div>
+                <div matListItemLine [ngClass]="{'active-text-color': isActive('download-file')}">Gestión de archivos</div>
+            </mat-list-item>
+            <mat-list-item role="listitem" routerLinkActive="active" routerLink="cryptography">
+                <mat-icon matListItemIcon [ngClass]="{'active-text-color': isActive('cryptography')}">enhanced_encryption</mat-icon>
+
+                <div matListItemTitle [ngClass]="{'active-text-color': isActive('cryptography')}">Criptografía</div>
+                <div matListItemLine [ngClass]="{'active-text-color': isActive('cryptography')}">Gestión de criptografía</div>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar color="primary">
+            <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>App Cryptography</span>
+            <span class="example-spacer"></span>
+            <app-menu></app-menu>
+
+            <!--   <button (click)="auth.logout()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with share icon">
+                <mat-icon>logout</mat-icon>
+            </button> -->
+        </mat-toolbar>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

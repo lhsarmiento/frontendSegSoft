@@ -1,0 +1,96 @@
+.example-container {
+    width: auto;
+    height: 100vh;
+    /* The background property is added to clearly distinguish the borders between drawer and main
+       content */
+    background: #eee;
+  }
+
+.menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    margin: 0 auto;
+    width: 80%;
+    padding: 40px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  mat-drawer{
+    padding: 18px;
+  }
+
+  mat-list{
+    width: 300px;
+  }
+
+  .login-logo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 100px;
+
+    }
+  }
+
+  .active{
+    background-color: #3f51b5;
+    ;
+    
+  }
+  .active-text-color {
+    color: white !important;
+}
+
+  
+  
+  
+  mat-list-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  mat-toolbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .grass{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    height: 30px;
+  }
+
+  .ball{
+
+    position: absolute;
+    bottom: 5px;
+    left: 130px;
+    cursor: pointer;
+
+    &.rebote{
+      animation-name: rebote;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: reverse;
+      animation-timing-function: ease-out;
+    }
+
+  }
+
+  
